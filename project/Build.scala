@@ -15,7 +15,7 @@ object PlayTemplateBuild extends Build {
   )
 
   lazy val root = Project(
-    id = "playtemplate",
+    id = "play-twbs3",
     base = file("."),
     settings = Project.defaultSettings ++ buildSettings ++ templateSettings)
 
