@@ -2,10 +2,24 @@
 
 @main("Welcome to Play") {
 
-    Here we need some stuff.
-
     @twbs.alerts.alertDanger {
-        asdasdas
+        <strong>Danger</strong> DO SOMETHING
+    }
+
+    @twbs.alerts.alertInfo {
+        <strong>INFO</strong> YOU HAVE BEEN INFORMED
+    }
+
+    @twbs.alerts.alertWarning {
+        <strong>WARNING</strong> YOU HAVE BEEN WARNED
+    }
+
+    @twbs.alerts.alertSuccess {
+        <strong>SUCCESS</strong> YEEEAH
+    }
+
+    @twbs.panels.panelDanger(Html("<strong>Danger</strong>")) {
+        DO SOMETHING
     }
 
 }
