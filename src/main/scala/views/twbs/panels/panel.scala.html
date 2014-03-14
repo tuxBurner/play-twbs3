@@ -1,4 +1,4 @@
-@(headline:play.api.templates.Html = null,panelClass: String = null)(content: play.api.templates.Html)
+@(headline: Html = null,panelClass: String = null, panelFooter: Html = null)(content: Html)
 <div class="panel @panelClass">
     @if(headline != null) {
       <div class="panel-heading">
@@ -10,4 +10,8 @@
     <div class="panel-body">
         @content
     </div>
+    @* only display footer if not null *@
+    @if(panelFooter != null) {
+      <div class="panel-footer">@panelFooter</div>
+    }
 </div>

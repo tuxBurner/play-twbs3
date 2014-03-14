@@ -1,0 +1,4 @@
+@(userForm: Form[controllers.Application.UserData])(implicit formHorizontal: views.twbs.formhelper.FormHorizontal = null)
+@twbs.formhelper.inputText(userForm("name"))
+@twbs.formhelper.inputText(userForm("age"))
+@twbs.formhelper.inputStatic(userForm("static"))

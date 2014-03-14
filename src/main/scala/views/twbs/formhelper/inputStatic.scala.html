@@ -1,0 +1,9 @@
+@(field: play.api.data.Field, args: (Symbol,Any)*)(implicit lang: play.api.i18n.Lang,formHorizontal: views.twbs.formhelper.FormHorizontal = null)
+
+@classes = @{ args.toMap.get('class).map(_.toString).getOrElse("") }
+
+@input(field, args.filter(_._1 != 'type):_*) { (id, name, value, htmlArgs, error) =>
+    <p class="form-control-static @classes" id="@id" @play.api.templates.PlayMagic.toHtmlArgs(htmlArgs.toMap)>
+      @value
+    </p>
+}

@@ -1,9 +1,30 @@
-@(message: String)
+@(userForm: Form[controllers.Application.UserData])
 
-@main("Welcome to Play") {
 
-    @twbs.alerts.alertDanger {
-        <strong>Danger</strong> DO SOMETHING
+@main("Examples") {
+
+
+    <h1>Forms</h1>
+
+    <h2>Normal</h2>
+    @twbs.formhelper.form(routes.Application.formTest()) {
+        @formcontent(userForm)
+    }
+
+    <h2>Inline</h2>
+    @twbs.formhelper.form(routes.Application.formTest(), 'class -> "form-inline") {
+        @formcontent(userForm)
+    }
+
+    <h2>Horizontal</h2>
+    @twbs.formhelper.hForm(routes.Application.formTest(), "col-sm-2", "col-sm-10") { implicit formHorizontal =>
+        @formcontent(userForm)
+    }
+
+    <h1>Alerts</h1>
+
+    @twbs.alerts.alertSuccess {
+        <strong>SUCCESS</strong> YEEEAH
     }
 
     @twbs.alerts.alertInfo {
@@ -14,9 +35,10 @@
         <strong>WARNING</strong> YOU HAVE BEEN WARNED
     }
 
-    @twbs.alerts.alertSuccess {
-        <strong>SUCCESS</strong> YEEEAH
+    @twbs.alerts.alertDanger {
+        <strong>Danger</strong> DO SOMETHING
     }
+
 
     @twbs.alerts.alertSuccess {
         <strong>
@@ -28,10 +50,37 @@
         </strong>
     }
 
+
+    <h1>Panels</h1>
+
+    <h2>Normal Panels</h2>
+
+    @twbs.panels.panelPrimary(Html("<strong>Primary</strong>")) {
+        PRIMARY INFORMATIONS
+    }
+
+    @twbs.panels.panelSuccess(Html("<strong>Success</strong>")) {
+        SUCCESS
+    }
+
+    @twbs.panels.panelInfo(Html("<strong>Info</strong>")) {
+        YOU HAVE BEEN INFORMED
+    }
+
+    @twbs.panels.panelWarning(Html("<strong>Warning</strong>")) {
+        YOU HAVE BEEN WARNED
+    }
+
     @twbs.panels.panelDanger(Html("<strong>Danger</strong>")) {
         DO SOMETHING
     }
 
+    <h2>Panel with footer</h2>
+    @twbs.panels.panelPrimary(Html("<strong>Primary</strong>"),Html("<strong>I am the footer</strong>")) {
+        PRIMARY INFORMATIONS
+    }
+
+    <h1>Wells</h1>
     @twbs.wells.well {
         I am doing well.
     }

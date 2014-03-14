@@ -13,7 +13,7 @@
 * @param body The form body.
 *@
 @(action: play.api.mvc.Call, labelClass:String, inputClass: String, args: (Symbol,String)*)(body: (views.twbs.formhelper.FormHorizontal) => play.api.templates.Html)
-<form action="@action.url" role="form" method="@action.method" class="form-horizontal"  @@play.api.templates.PlayMagic.toHtmlArgs(args.toMap)>
+<form action="@action.url" role="form" method="@action.method" class="form-horizontal"  @play.api.templates.PlayMagic.toHtmlArgs(args.toMap)>
   @body(new views.twbs.formhelper.FormHorizontal(labelClass,inputClass))
 </form>
 
