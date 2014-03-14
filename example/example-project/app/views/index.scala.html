@@ -15,6 +15,13 @@
         @formcontent(userForm)
     }
 
+    <h2>Normal but don't display hints at input for age</h2>
+    @twbs.formhelper.form(routes.Application.formTest()) {
+        @twbs.formhelper.inputText(userForm("name"))
+        @twbs.formhelper.inputText(userForm("age"),'_hideInfo -> true)
+        @twbs.formhelper.inputStatic(userForm("static"))
+    }
+
     <h2>Inline</h2>
     @twbs.formhelper.form(routes.Application.formTest(), 'class -> "form-inline") {
         @formcontent(userForm)
