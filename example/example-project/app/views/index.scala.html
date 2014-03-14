@@ -3,6 +3,10 @@
 
 @main("Examples") {
 
+    <h1>Page Header</h1>
+    @twbs.pageHeader{
+        Welcome to the page
+    }
 
     <h1>Forms</h1>
 
@@ -78,6 +82,31 @@
     <h2>Panel with footer</h2>
     @twbs.panels.panelPrimary(Html("<strong>Primary</strong>"),Html("<strong>I am the footer</strong>")) {
         PRIMARY INFORMATIONS
+    }
+
+    <h1>Labels</h1>
+    @twbs.labels.labelDefault{ Default }
+    @twbs.labels.labelPrimary{Primary}
+    @twbs.labels.labelSuccess{Success}
+    @twbs.labels.labelInfo{Info}
+    @twbs.labels.labelWarning{Warning}
+    @twbs.labels.labelDanger{Danger}
+
+    <h1>Badge</h1>
+    <a href="#">
+        Inbox
+        @twbs.badge{42}
+    </a>
+
+    <h1>Jumbotron</h1>
+    <h2>With title</h2>
+    @twbs.jumbotron(Html("Welcome to TWBS")) {
+      <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+    }
+
+    <h2>Without title</h2>
+    @twbs.jumbotron() {
+        <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
     }
 
     <h1>Wells</h1>

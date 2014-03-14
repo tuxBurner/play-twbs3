@@ -1,0 +1,7 @@
+@(headline: Html = null)(content: Html)
+<div class="jumbotron">
+  @if(headline != null) {
+    <h1>@headline</h1>
+  }
+  @content
+</div>
