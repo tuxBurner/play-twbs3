@@ -40,5 +40,13 @@
         </div>
         <script type='text/javascript' src='@routes.WebJarAssets.at(WebJarAssets.locate("jquery.min.js"))'></script>
         <script type='text/javascript' src='@routes.WebJarAssets.at(WebJarAssets.locate("bootstrap.min.js"))'></script>
+        <script type='text/javascript' src='@routes.WebJarAssets.at(WebJarAssets.locate("run_prettify.js"))'></script>
+        <script>
+            !function ($) {
+                $(function(){
+                    window.prettyPrint && prettyPrint()
+                })
+            }(window.jQuery)
+        </script>
     </body>
 </html>

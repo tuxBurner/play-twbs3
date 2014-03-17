@@ -7,7 +7,8 @@ libraryDependencies ++= Seq(
   "com.github.tuxBurner" %% "play-twbs3" % "1.0-SNAPSHOT",
   "org.webjars" %% "webjars-play" % "2.2.1-2",
   "org.webjars" % "bootstrap" % "3.1.0",
-  "org.webjars" % "jquery" % "1.11.0-1"
+  "org.webjars" % "jquery" % "1.11.0-1",
+  "org.webjars" % "prettify" % "4-Mar-2013"
 )
 
 resolvers ++= Seq(
