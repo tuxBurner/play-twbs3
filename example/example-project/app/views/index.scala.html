@@ -3,16 +3,21 @@
 
 @main("Examples") {
 
-    <h1>Page Header</h1>
-    @twbs.pageHeader{
-        Welcome to the page
-    }
+<h1>Page Header</h1>
+<div class="row">
+  <div class="col-md-6">
+@twbs.pageHeader{
+  Welcome to the page
+}
+  </div>
+    <div class="col-md-6">
 
-    <pre class="prettyprint">
-         @@twbs.pageHeader{
-            Welcome to the page
-          }
-    </pre>
+<pre class="prettyprint">
+@@twbs.pageHeader{
+  Welcome to the page
+}</pre>
+</div>
+</div>
 
     <h1>Forms</h1>
 
@@ -37,6 +42,15 @@
     @twbs.formhelper.hForm(routes.Application.formTest(), "col-sm-2", "col-sm-10") { implicit formHorizontal =>
         @formcontent(userForm)
     }
+
+    <h1>Buttons</h1>
+    @twbs.buttons.buttonDefault("button") { Default }
+    @twbs.buttons.buttonPrimary("button") { Primary }
+    @twbs.buttons.buttonSuccess("button") { Success }
+    @twbs.buttons.buttonInfo("button") { Info }
+    @twbs.buttons.buttonWarning("button") { Warning }
+    @twbs.buttons.buttonDanger("button") { Danger }
+    @twbs.buttons.buttonLink("button") { Link }
 
     <h1>Alerts</h1>
 
