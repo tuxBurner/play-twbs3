@@ -2,4 +2,7 @@
 * generates a generic boostrap3 html button
 *@
 @(btnType: String,btnClass: String,htmlArgs: (Symbol,Any)*)(content: Html)
-<button type="@btnType" class="btn @btnClass" @toHtmlArgs(htmlArgs.toMap)>@content</button>
+
+@classes = @{ htmlArgs.toMap.get('class).map(_.toString).getOrElse("") }
+
+<button type="@btnType" class="btn @btnClass @classes" @toHtmlArgs(htmlArgs.toMap)>@content</button>

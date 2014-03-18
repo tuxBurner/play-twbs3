@@ -44,6 +44,7 @@
     }
 
     <h1>Buttons</h1>
+    <h2>Just Buttons</h2>
     @twbs.buttons.buttonDefault("button") { Default }
     @twbs.buttons.buttonPrimary("button") { Primary }
     @twbs.buttons.buttonSuccess("button") { Success }
@@ -52,8 +53,16 @@
     @twbs.buttons.buttonDanger("button") { Danger }
     @twbs.buttons.buttonLink("button") { Link }
 
-    <h1>Alerts</h1>
+    <h2>Additional Classes</h2>
+    @twbs.buttons.buttonPrimary("button",'class -> "btn-lg") { Large Button }
+    @twbs.buttons.buttonPrimary("button",'class -> "btn-sm") { Small Button }
+    @twbs.buttons.buttonPrimary("button",'class -> "btn-xs") { Extra small Button }
 
+    <h2>Block Buttons</h2>
+    @twbs.buttons.buttonPrimary("button",'class -> "btn-lg btn-block") { Large Button }
+    @twbs.buttons.buttonPrimary("button",'class -> "btn-lg btn-block") { Large Button }
+
+    <h1>Alerts</h1>
     @twbs.alerts.alertSuccess {
         <strong>SUCCESS</strong> YEEEAH
     }
