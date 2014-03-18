@@ -29,7 +29,7 @@ object Templates {
   val templateFormats = SettingKey[Map[String, String]]("template-formats")
 
   lazy val templateDefaults = Seq[Setting[_]](
-    templatePackages := Seq("play.api.templates._", "play.api.templates.PlayMagic._","views.twbs.formhelper._"),
+    templatePackages := Seq("play.api.templates._", "play.api.templates.PlayMagic._","views.twbs._"),
     templateFormats := Map("html" -> "play.api.templates.HtmlFormat")
   )
 

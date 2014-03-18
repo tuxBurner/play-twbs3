@@ -1,4 +1,4 @@
-@(content: Html)
-@views.html.twbs.labels.basicLabel("label-info") {
+@(htmlArgs: (Symbol,Any)*)(content: Html)
+@views.html.twbs.labels.basicLabel("label-info",htmlArgs:_*) {
   @content
 }

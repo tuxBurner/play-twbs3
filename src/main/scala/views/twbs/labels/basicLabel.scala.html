@@ -1,4 +1,4 @@
-@(labelClass: String = null)(content: Html)
-<span class="label @labelClass">
+@(labelClass: String,htmlArgs: (Symbol,Any)*)(content: Html)
+<span class="label @labelClass @views.twbs.TwbsHelpers.getClasses(htmlArgs:_*)" @toHtmlArgs(htmlArgs.toMap)>
   @content
 </span>

@@ -1,4 +1,4 @@
-@(content: play.api.templates.Html)
-@views.html.twbs.alerts.alert("alert-success") {
+@(htmlArgs: (Symbol,Any)*)(content: Html)
+@views.html.twbs.alerts.basicAlert("alert-success",htmlArgs:_*) {
     @content
 }

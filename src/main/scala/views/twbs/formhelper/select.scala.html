@@ -10,11 +10,11 @@
 * @param args Set of extra attributes.
 * @param handler The field constructor.
 *@
-@(field: play.api.data.Field, options: Seq[(String,String)], args: (Symbol,Any)*)(implicit lang: play.api.i18n.Lang,formHorizontal: views.twbs.formhelper.FormHorizontal = null)
+@(field: play.api.data.Field, options: Seq[(String,String)], args: (Symbol,Any)*)(implicit lang: play.api.i18n.Lang,formHorizontal: FormHorizontal = null)
 
 
 @input(field, args:_*) { (id, name, value, htmlArgs, error) =>
-    <select class="form-control" id="@id" name="@name" @play.api.templates.PlayMagic.toHtmlArgs(htmlArgs.toMap)>
+    <select class="form-control" id="@id" name="@name" @toHtmlArgs(htmlArgs.toMap)>
 @args.toMap.get('_default).map { defaultValue =>
     <option class="blank" value="">@defaultValue</option>
 }
