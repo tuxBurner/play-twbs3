@@ -95,28 +95,28 @@
 
     <h2>Normal Panels</h2>
 
-    @twbs.panels.panelPrimary(Html("<strong>Primary</strong>")) {
+    @twbs.panels.panelPrimary(Option.apply(Html("<strong>Primary</strong>")),None) {
         PRIMARY INFORMATIONS
     }
 
-    @twbs.panels.panelSuccess(Html("<strong>Success</strong>")) {
+    @twbs.panels.panelSuccess(Option.apply(Html("<strong>Success</strong>")),None) {
         SUCCESS
     }
 
-    @twbs.panels.panelInfo(Html("<strong>Info</strong>")) {
+    @twbs.panels.panelInfo(Option.apply(Html("<strong>Info</strong>")),None) {
         YOU HAVE BEEN INFORMED
     }
 
-    @twbs.panels.panelWarning(Html("<strong>Warning</strong>")) {
+    @twbs.panels.panelWarning(Option.apply(Html("<strong>Warning</strong>")),None) {
         YOU HAVE BEEN WARNED
     }
 
-    @twbs.panels.panelDanger(Html("<strong>Danger</strong>")) {
+    @twbs.panels.panelDanger(Option.apply(Html("<strong>Danger</strong>")),None) {
         DO SOMETHING
     }
 
     <h2>Panel with footer</h2>
-    @twbs.panels.panelPrimary(Html("<strong>Primary</strong>"),Html("<strong>I am the footer</strong>")) {
+    @twbs.panels.panelPrimary(Option.apply(Html("<strong>Primary</strong>")),Option.apply(Html("<strong>I am the footer</strong>"))) {
         PRIMARY INFORMATIONS
     }
 

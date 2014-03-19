@@ -1,4 +1,4 @@
-@(headline: Html, panelFooter: Html = null)(content: Html)
-@views.html.twbs.panels.panel(headline,"panel-primary",panelFooter) {
+@(headline: Option[Html], panelFooter: Option[Html],htmlArgs: (Symbol,Any)*)(content: Html)
+@views.html.twbs.panels.basicPanel(headline,"panel-primary",panelFooter,htmlArgs:_*) {
     @content
 }
