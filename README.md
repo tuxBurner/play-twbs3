@@ -1,106 +1,29 @@
-# Play2 templates in non-Play project
+# Play2 Twitter Bootstrap 3 template helper
 
-Play2 templates are cool because they got compiled into Scala code and this Scala code is then built along with the rest of the project. Thus the templates are
+This is a collection of template helpers for twitter bootstrap 3 (http://getbootstrap.com/), which i wrote.
 
-* statically checked with the application code
-* pre-compiled
 
-This is a demo project to show how [Play2 templates](http://www.playframework.com/documentation/2.2.1/ScalaTemplates) can be used in a standalone SBT project.
+## Versions
+0.2: Release for play 2.2.3 and added linkButtonHelpers
 
-## Build time
+## Installation (using sbt)
 
-### Play2 plugin
-
-Play2 code that compiles templates is buried inside "sbt-plugin", so one needs to attach it to the SBT build, see [project/templates.sbt](project/templates.sbt):
+You will need to add the following resolver in your `project/Build.scala` file:
 
 ```scala
-addSbtPlugin("play" % "sbt-plugin" % "2.2.1")
-```
+resolvers += "tuxburner.github.io" at "http://tuxburner.github.io/repo"
+``` 
 
-### Source generation parameters
-
-`sbt-plugin` contains convenient source generator called `ScalaTemplates`, it depends on the couple parameters:
+Add a dependency on the following artifact:
 
 ```scala
-// What are the packages where content types & formats are defined
-val templatePackages = SettingKey[Seq[String]]("template-packages")
-
-// The mapping from file extension to the content type T and its format Format[T]
-val templateFormats = SettingKey[PartialFunction[String, (String, String)]]("template-formats")
+libraryDependencies += "com.github.tuxBurner" %% "play-twbs3" % "0.2"
 ```
 
-(more on the "content type" below in *Runtime* section)
+## Examples
+I wrote an example project for the helpers, which shows how to use them in your project.
 
-Then the source generator looks like 
+Take a look at: example/example-project
 
-```scala
-sourceGenerators in Compile <+= (state, sourceDirectory in Compile, sourceManaged in Compile, templateFormats, templatePackages) map play.Project.ScalaTemplates
-```
-
-(`play.Project.*` is provided by "sbt-plugin")
-
-The full example is here [project/Build.scala](project/Build.scala)
-
-## Runtime
-
-### Dependency
-
-The compiled templates depend on the small library:
-
-```scala
-val templatesLibrary = "play" %% "templates" % play.core.PlayVersion.current
-```
-
-(here again `play.core.PlayVersion.current` is provided by "sbt-plugin")
-
-### Content type
-
-When "ScalaTemplates" generate Scala files from templates, they are parametrized with so called content type. When calling template (e.g. `views.html.hello("World")`), one gets the instance of such type. Remember that `Html` in Play2 applications? `Html`, `Txt` types are hidden in `play.api` library, but it's very easy to create own content type:
-
-```scala
-package app.templates
-
-import play.templates._
-
-class Text(val buffer: StringBuilder) extends Appendable[Text] {
-  def +=(other: Text) = {
-    buffer.append(other.buffer)
-    this
-  }
-
-  def body = buffer.toString
-}
-
-object Text {
-  def apply(text: String) = new Text(new StringBuilder(text))
-}
-
-object TextFormat extends Format[Text] {
-  def raw(text: String) = Text(text)
-
-  /**
-   * Creates a safe (escaped) content for this format (e.g. escaped for HTML and plain for Txt)
-   *
-   * @see framework/src/play/src/main/scala/play/api/templates/Templates.scala
-   */
-  def escape(text: String): Text = Text(text)
-}
-```
-
-See [src/main/scala/Text.scala](src/main/scala/Text.scala)
-
-`templatePackages` and `templateFormats` in SBT build tell "sbt-plugin" what imports and types to use in the generated Scala files.
-
-### Using
-
-Trivial:
-
-```scala
-println(views.html.hello("World").body)
-```
-
-See [src/main/scala/Main.scala](src/main/scala/Main.scala)
-
-## Problems
-
-Are any?
+## Help:
+If you have any ideas how to make it better, or you are missing any features, pull requests are always welcome :)

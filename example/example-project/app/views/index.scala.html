@@ -62,6 +62,15 @@
     @twbs.buttons.buttonPrimary("button",'class -> "btn-lg btn-block") { Large Button }
     @twbs.buttons.buttonPrimary("button",'class -> "btn-lg btn-block") { Large Button }
 
+    <h1>Link Buttons</h1>
+    <h2>Just Links</h2>
+    @twbs.linkbuttons.linkButtonDefault("http://google.de",'target -> "_blank") { Default }
+    @twbs.linkbuttons.linkButtonPrimary("http://google.de",'target -> "_blank") { Primary }
+    @twbs.linkbuttons.linkButtonSuccess("http://google.de",'target -> "_blank") { Success }
+    @twbs.linkbuttons.linkButtonInfo("http://google.de",'target -> "_blank") { Info }
+    @twbs.linkbuttons.linkButtonWarning("http://google.de",'target -> "_blank") { Warning }
+    @twbs.linkbuttons.linkButtonDanger("http://google.de",'target -> "_blank") { Danger }
+    
     <h1>Alerts</h1>
     @twbs.alerts.alertSuccess() {
         <strong>SUCCESS</strong> YEEEAH
