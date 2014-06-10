@@ -18,7 +18,7 @@ resolvers += "tuxburner.github.io" at "http://tuxburner.github.io/repo"
 Add a dependency on the following artifact:
 
 ```scala
-libraryDependencies += "com.github.tuxBurner" %% "play-twbs3" % "0.2"
+libraryDependencies += "com.github.tuxBurner" %% "play-twbs3" % "0.3"
 ```
 
 ## Examples
