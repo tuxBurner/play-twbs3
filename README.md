@@ -4,6 +4,7 @@ This is a collection of template helpers for twitter bootstrap 3 (http://getboot
 
 
 ## Versions
+0.3: Added inputNumberSpinner to formhelpers
 0.2: Release for play 2.2.3 and added linkButtonHelpers
 
 ## Installation (using sbt)

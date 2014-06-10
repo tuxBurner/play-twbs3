@@ -6,8 +6,8 @@
 
 @horizontalClasses=@{elements.args.get('_horizontal).headOption match {
     case Some(foo) => {
-        val blubber = foo.asInstanceOf[Array[String]];
-        new FormHorizontal(blubber(0), blubber(1));
+        val horizontalClasses = foo.asInstanceOf[Array[String]];
+        new FormHorizontal(horizontalClasses(0), horizontalClasses(1));
     }
     case None => horizontalForm.asInstanceOf[FormHorizontal]
   }
@@ -20,9 +20,7 @@
   <div  @if(horizontalClasses != null) { class="@horizontalClasses.inputClass"}>
     @elements.input
     <span class="help-block">
-        @if(elements.args.getOrElse('_hideInfo,false) == false) {
-          @elements.infos(elements.lang).mkString(",")
-        }
+        @elements.infos(elements.lang).mkString(",")
         @elements.errors(elements.lang).mkString(", ")
     </span>
   </div>

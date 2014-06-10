@@ -29,9 +29,17 @@
     <h2>Normal but don't display hints at input for age</h2>
     @twbs.formhelper.form(routes.Application.formTest()) {
         @twbs.formhelper.inputText(userForm("name"))
-        @twbs.formhelper.inputText(userForm("age"),'_hideInfo -> true)
+        @twbs.formhelper.inputText(userForm("age"),'_showConstraints -> false)
         @twbs.formhelper.inputStatic(userForm("static"))
     }
+
+    <h2>Normal but age as a number spinner</h2>
+    @twbs.formhelper.form(routes.Application.formTest()) {
+        @twbs.formhelper.inputText(userForm("name"))
+        @twbs.formhelper.inputNumberSpinner(userForm("age"),1)
+        @twbs.formhelper.inputStatic(userForm("static"))
+    }
+
 
     <h2>Inline</h2>
     @twbs.formhelper.form(routes.Application.formTest(), 'class -> "form-inline") {

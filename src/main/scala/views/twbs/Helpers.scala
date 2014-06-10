@@ -1,5 +1,7 @@
 package views.twbs
 
+import play.api.templates.Html
+
 /**
  * Marker class for horizontal form which holds the classes for the label and the input
  * @param labelClass
@@ -18,5 +20,18 @@ object TwbsHelpers {
    */
   def getClasses(htmlArgs: (Symbol,Any)*):String = {
     htmlArgs.toMap.get('class).map(_.toString).getOrElse("")
+  }
+
+  /**
+  * gets a field constraint as a html attr
+  * constAsHtmlAttr(field,"constraint.min","min") returns min="10"
+  */
+  def constAsHtmlAttr(field: play.api.data.Field, constraintName: String, attrName: String): Html = {
+    field.constraints.find(p => p._1 == constraintName) match {
+       case Some(constraint) => {
+          new Html(new StringBuilder(attrName+"=\""+constraint._2.head.toString+"\""))
+       }
+       case None => new Html(new StringBuilder("")) 
+    }
   }
 }
