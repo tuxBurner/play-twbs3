@@ -5,6 +5,7 @@ This is a collection of template helpers for twitter bootstrap 3 (http://getboot
 
 ## Versions
 0.3: Added inputNumberSpinner to formhelpers and removed _hideInfo because play already brings the _showConstraints option
+
 0.2: Release for play 2.2.3 and added linkButtonHelpers
 
 ## Installation (using sbt)
