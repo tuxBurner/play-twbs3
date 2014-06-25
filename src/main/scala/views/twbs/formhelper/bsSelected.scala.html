@@ -1,5 +1,5 @@
 @**
-* Generate an HTML select.
+* Generate an HTML select with http://silviomoreto.github.io/bootstrap-select/.
 *
 * Example:
 * {{{
@@ -20,7 +20,7 @@
     <option class="blank" value="">@defaultValue</option>
 }
 @options.map { v =>
-    <option value="@v._1" @(if(value == Some(v._1)) "selected" else "")>@v._2</option>
+    <option value="@v._1" data-content="@Html.apply(v._2)" @(if(value == Some(v._1)) "selected" else "")></option>
 }
 </select>
 }

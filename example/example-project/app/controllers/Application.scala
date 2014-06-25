@@ -15,7 +15,8 @@ object Application extends Controller {
     mapping(
       "name" -> nonEmptyText,
       "age" -> number(min = 0, max = 100),
-      "static" -> text
+      "static" -> text,
+      "gender" -> text
     )(UserData.apply)(UserData.unapply)
   )
 
@@ -25,7 +26,7 @@ object Application extends Controller {
    * @param age
    * @param static
    */
-  case class UserData(name: String, age: Int, static: String)
+  case class UserData(name: String, age: Int, static: String, gender: String)
 
 
   def index = Action {
@@ -33,7 +34,7 @@ object Application extends Controller {
 
 
 
-    Ok(views.html.index(userForm.fill(new UserData("",0,"I am a static string in this form"))))
+    Ok(views.html.index(userForm.fill(new UserData("",0,"I am a static string in this form","male"))))
   }
 
   def formTest = Action {

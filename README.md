@@ -4,6 +4,8 @@ This is a collection of template helpers for twitter bootstrap 3 (http://getboot
 
 
 ## Versions
+0.4: Fixed bug with class is rendered out twice when using 'class->"test", added bsSelected for http://silviomoreto.github.io/bootstrap-select/ support.
+
 0.3: Added inputNumberSpinner to formhelpers and removed _hideInfo because play already brings the _showConstraints option
 
 0.2: Release for play 2.2.3 and added linkButtonHelpers
@@ -14,12 +16,12 @@ You will need to add the following resolver in your `project/Build.scala` file:
 
 ```scala
 resolvers += "tuxburner.github.io" at "http://tuxburner.github.io/repo"
-``` 
+```
 
 Add a dependency on the following artifact:
 
 ```scala
-libraryDependencies += "com.github.tuxBurner" %% "play-twbs3" % "0.3"
+libraryDependencies += "com.github.tuxBurner" %% "play-twbs3" % "0.4"
 ```
 
 ## Examples
