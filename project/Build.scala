@@ -7,7 +7,7 @@ object PlayTemplateBuild extends Build {
   lazy val buildSettings = Seq(
     scalaVersion := "2.10.3",
     organization := "com.github.tuxBurner",
-    version := "0.4",
+    version := "0.5-SNAPSHOT",
     publishTo <<= version {
       case v if v.trim.endsWith("SNAPSHOT") => Some(Resolver.file("file",  new File(Path.userHome.absolutePath+"/.m2/repository")))
       case _ => Some(Resolver.file("Github Pages",  new File("../tuxBurner.github.io/repo")))
