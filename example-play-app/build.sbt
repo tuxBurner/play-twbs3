@@ -8,7 +8,7 @@ scalaVersion := "2.11.1"
 
 libraryDependencies ++= Seq(
   cache,
-  "com.github.tuxBurner" %% "play-twbs3" % "1.0",
+  "com.github.tuxBurner" %% "play-twbs3" % "1.0.1-SNAPSHOT",
   "org.webjars" % "bootstrap" % "3.2.0",
   "org.webjars" % "jquery" % "1.11.0-1",
   "org.webjars" % "prettify" % "4-Mar-2013",
