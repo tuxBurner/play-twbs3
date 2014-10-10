@@ -1,0 +1,4 @@
+@(headline: Option[Html], panelFooter: Option[Html],htmlArgs: (Symbol,Any)*)(content: Html)
+@twbs.panels.html.basicPanel(headline,"panel-primary",panelFooter,htmlArgs:_*) {
+    @content
+}

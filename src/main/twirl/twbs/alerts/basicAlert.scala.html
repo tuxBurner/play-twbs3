@@ -1,0 +1,4 @@
+@(alertClass: String,htmlArgs: (Symbol,Any)*)(content: Html)
+<div class="alert @alertClass @views.twbs.TwbsHelpers.getClasses(htmlArgs:_*)" @toHtmlArgs(htmlArgs.toMap)>
+  @content
+</div>

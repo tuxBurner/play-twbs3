@@ -1,0 +1,19 @@
+@**
+* Generate an HTML form.
+*
+* Example:
+* {{{
+* @form(action = routes.Users.submit,"col-md-3","col-md-9", args = 'class -> "myForm") { implicit formHorizontal =>
+*   ...
+* }
+* }}}
+*
+* @param action The submit action.
+* @param args Set of extra HTML attributes.
+* @param body The form body.
+*@
+@(action: play.api.mvc.Call, labelClass:String, inputClass: String, args: (Symbol,String)*)(body: (FormHorizontal) => Html)
+<form action="@action.url" role="form" method="@action.method" class="form-horizontal"  @toHtmlArgs(args.toMap)>
+  @body(new FormHorizontal(labelClass,inputClass))
+</form>
+

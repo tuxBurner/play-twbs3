@@ -1,0 +1,178 @@
+@(userForm: Form[controllers.Application.UserData])
+
+
+@main("Examples") {
+
+<h1>Page Header</h1>
+<div class="row">
+  <div class="col-md-6">
+@twbs.commons.html.pageHeader {
+  Welcome to the page
+}
+  </div>
+    <div class="col-md-6">
+
+<pre class="prettyprint">
+@@twbs.pageHeader{
+  Welcome to the page
+}</pre>
+</div>
+</div>
+
+    <h1>Forms</h1>
+
+    <h2>Normal</h2>
+    @twbs.formhelper.html.form(routes.Application.formTest()) {
+        @formcontent(userForm)
+    }
+
+    <h2>Normal but don't display hints at input for age</h2>
+    @twbs.formhelper.html.form(routes.Application.formTest()) {
+        @twbs.formhelper.html.inputText(userForm("name"))
+        @twbs.formhelper.html.inputText(userForm("age"),'_showConstraints -> false)
+        @twbs.formhelper.html.inputStatic(userForm("static"))
+    }
+
+    <h2>Normal but age as a number spinner</h2>
+    @twbs.formhelper.html.form(routes.Application.formTest()) {
+        @twbs.formhelper.html.inputText(userForm("name"))
+        @twbs.formhelper.html.inputNumberSpinner(userForm("age"),1)
+        @twbs.formhelper.html.inputStatic(userForm("static"))
+    }
+
+
+    <h2>Inline</h2>
+    @twbs.formhelper.html.form(routes.Application.formTest(), 'class -> "form-inline") {
+        @formcontent(userForm)
+    }
+
+    <h2>Horizontal</h2>
+    @twbs.formhelper.html.hForm(routes.Application.formTest(), "col-sm-2", "col-sm-10") { implicit formHorizontal =>
+        @formcontent(userForm)
+    }
+
+    <h1>Buttons</h1>
+    <h2>Just Buttons</h2>
+    @twbs.buttons.html.buttonDefault("button") { Default }
+    @twbs.buttons.html.buttonPrimary("button") { Primary }
+    @twbs.buttons.html.buttonSuccess("button") { Success }
+    @twbs.buttons.html.buttonInfo("button") { Info }
+    @twbs.buttons.html.buttonWarning("button") { Warning }
+    @twbs.buttons.html.buttonDanger("button") { Danger }
+    @twbs.buttons.html.buttonLink("button") { Link }
+
+    <h2>Additional Classes</h2>
+    @twbs.buttons.html.buttonPrimary("button",'class -> "btn-lg") { Large Button }
+    @twbs.buttons.html.buttonPrimary("button",'class -> "btn-sm") { Small Button }
+    @twbs.buttons.html.buttonPrimary("button",'class -> "btn-xs") { Extra small Button }
+
+    <h2>Block Buttons</h2>
+    @twbs.buttons.html.buttonPrimary("button",'class -> "btn-lg btn-block") { Large Button }
+    @twbs.buttons.html.buttonPrimary("button",'class -> "btn-lg btn-block") { Large Button }
+
+    <h1>Link Buttons</h1>
+    <h2>Just Links</h2>
+    @twbs.linkbuttons.html.linkButtonDefault("http://google.de",'target -> "_blank") { Default }
+    @twbs.linkbuttons.html.linkButtonPrimary("http://google.de",'target -> "_blank") { Primary }
+    @twbs.linkbuttons.html.linkButtonSuccess("http://google.de",'target -> "_blank") { Success }
+    @twbs.linkbuttons.html.linkButtonInfo("http://google.de",'target -> "_blank") { Info }
+    @twbs.linkbuttons.html.linkButtonWarning("http://google.de",'target -> "_blank") { Warning }
+    @twbs.linkbuttons.html.linkButtonDanger("http://google.de",'target -> "_blank") { Danger }
+
+    <h1>Alerts</h1>
+    @twbs.alerts.html.alertSuccess() {
+        <strong>SUCCESS</strong> YEEEAH
+    }
+
+    @twbs.alerts.html.alertInfo() {
+        <strong>INFO</strong> YOU HAVE BEEN INFORMED
+    }
+
+    @twbs.alerts.html.alertWarning() {
+        <strong>WARNING</strong> YOU HAVE BEEN WARNED
+    }
+
+    @twbs.alerts.html.alertDanger() {
+        <strong>Danger</strong> DO SOMETHING
+    }
+
+
+    @twbs.alerts.html.alertSuccess() {
+        <strong>
+            <strong>Click me -></strong>
+            @twbs.alerts.html.alertLink("http://github.com/tuxBurner") {
+                Visit me please :)
+            }
+            Thank you !!111!!
+        </strong>
+    }
+
+
+    <h1>Panels</h1>
+
+    <h2>Normal Panels</h2>
+
+    @twbs.panels.html.panelPrimary(Option.apply(Html("<strong>Primary</strong>")),None) {
+        PRIMARY INFORMATIONS
+    }
+
+    @twbs.panels.html.panelSuccess(Option.apply(Html("<strong>Success</strong>")),None) {
+        SUCCESS
+    }
+
+    @twbs.panels.html.panelInfo(Option.apply(Html("<strong>Info</strong>")),None) {
+        YOU HAVE BEEN INFORMED
+    }
+
+    @twbs.panels.html.panelWarning(Option.apply(Html("<strong>Warning</strong>")),None) {
+        YOU HAVE BEEN WARNED
+    }
+
+    @twbs.panels.html.panelDanger(Option.apply(Html("<strong>Danger</strong>")),None) {
+        DO SOMETHING
+    }
+
+    <h2>Panel with footer</h2>
+    @twbs.panels.html.panelPrimary(Option.apply(Html("<strong>Primary</strong>")),Option.apply(Html("<strong>I am the footer</strong>"))) {
+        PRIMARY INFORMATIONS
+    }
+
+    <h1>Labels</h1>
+    @twbs.labels.html.labelDefault(){ Default }
+    @twbs.labels.html.labelPrimary(){Primary}
+    @twbs.labels.html.labelSuccess(){Success}
+    @twbs.labels.html.labelInfo(){Info}
+    @twbs.labels.html.labelWarning(){Warning}
+    @twbs.labels.html.labelDanger(){Danger}
+
+    <h1>Badge</h1>
+    <a href="#">
+        Inbox
+        @twbs.commons.html.badge{42}
+    </a>
+
+    <h1>Jumbotron</h1>
+    <h2>With title</h2>
+    @twbs.commons.html.jumbotron(Html("Welcome to TWBS")) {
+      <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+    }
+
+    <h2>Without title</h2>
+    @twbs.commons.html.jumbotron() {
+        <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+    }
+
+    <h1>Wells</h1>
+    @twbs.wells.html.well {
+        I am doing well.
+    }
+
+    @twbs.wells.html.wellLarge {
+        I am doing well in large.
+    }
+
+    @twbs.wells.html.wellSmall {
+        I am doing well in small.
+    }
+
+}

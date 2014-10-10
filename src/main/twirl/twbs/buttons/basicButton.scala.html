@@ -1,0 +1,5 @@
+@**
+* generates a generic boostrap3 html button
+*@
+@(btnType: String,btnClass: String,htmlArgs: (Symbol,Any)*)(content: Html)
+<button type="@btnType" class="btn @btnClass @views.twbs.TwbsHelpers.getClasses(htmlArgs:_*)" @toHtmlArgs(htmlArgs.toMap)>@content</button>

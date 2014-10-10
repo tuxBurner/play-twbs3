@@ -4,6 +4,9 @@ This is a collection of template helpers for twitter bootstrap 3 (http://getboot
 
 
 ## Versions
+1.0: Release for play 2.3.
+
+
 0.4: Fixed bug with class is rendered out twice when using 'class->"test", added bsSelected for http://silviomoreto.github.io/bootstrap-select/ support.
 
 0.3: Added inputNumberSpinner to formhelpers and removed _hideInfo because play already brings the _showConstraints option

@@ -1,0 +1,4 @@
+@(btnType: String,htmlArgs: (Symbol,Any)*)(content: Html)
+@twbs.buttons.html.basicButton(btnType,"btn-default",htmlArgs:_*) {
+    @content
+}

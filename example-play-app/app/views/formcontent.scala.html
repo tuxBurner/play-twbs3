@@ -1,0 +1,5 @@
+@(userForm: Form[controllers.Application.UserData])(implicit formHorizontal: views.twbs.FormHorizontal = null)
+@twbs.formhelper.html.inputText(userForm("name"))
+@twbs.formhelper.html.inputText(userForm("age"))
+@twbs.formhelper.html.inputStatic(userForm("static"))
+@twbs.formhelper.html.bsSelected(userForm("gender"),views.html.helper.options(("male","<b>male</b>"),("female","<i>female</i>")),'class->"selected")

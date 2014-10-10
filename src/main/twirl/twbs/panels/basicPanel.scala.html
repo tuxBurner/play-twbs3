@@ -1,0 +1,17 @@
+@(headline: Option[Html],panelClass: String, panelFooter: Option[Html],htmlArgs: (Symbol,Any)*)(content: Html)
+<div class="panel @panelClass @views.twbs.TwbsHelpers.getClasses(htmlArgs:_*)" @toHtmlArgs(htmlArgs.toMap)>
+    @if(headline.isDefined) {
+      <div class="panel-heading">
+        <h3 class="panel-title">
+            @headline.get
+        </h3>
+      </div>
+    }
+    <div class="panel-body">
+        @content
+    </div>
+    @* only display footer if not null *@
+    @if(panelFooter.isDefined) {
+      <div class="panel-footer">@panelFooter.get</div>
+    }
+</div>
