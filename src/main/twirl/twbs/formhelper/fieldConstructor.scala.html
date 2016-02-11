@@ -15,13 +15,17 @@
 
 <div class="form-group @elements.args.getOrElse('_formGroupClass,"") @if(elements.hasErrors){has-error}" id="@elements.args.toMap.get('_id).getOrElse(elements.id + "_field")">
   @if(elements.args.getOrElse('_hideLabel,false) == false) {
-    <label class="control-label @if(horizontalClasses != null) { @horizontalClasses.labelClass}" for="@elements.id">@elements.label(elements.lang)</label>
+    <label class="control-label @if(horizontalClasses != null) { @horizontalClasses.labelClass}" for="@elements.id">@elements.label</label>
   }
   <div  @if(horizontalClasses != null) { class="@horizontalClasses.inputClass"}>
     @elements.input
     <span class="help-block">
-        @elements.infos(elements.lang).mkString(",")
-        @elements.errors(elements.lang).mkString(", ")
+        @elements.errors.map { error =>
+          @error
+        } 
+        @elements.infos.map { info =>
+          @info
+        }
     </span>
   </div>
 </div>

@@ -1,7 +1,7 @@
 @**
 * Prepare a generic HTML input.
 *@
-@(field: play.api.data.Field, args: (Symbol, Any)* )(inputDef: (String, String  , Option[String], Map[Symbol,Any], Boolean) => Html)(implicit lang: play.api.i18n.Lang,formHorizontal: FormHorizontal = null)
+@(field: play.api.data.Field, args: (Symbol, Any)* )(inputDef: (String, String  , Option[String], Map[Symbol,Any], Boolean) => Html)(implicit messages: play.api.i18n.Messages,formHorizontal: FormHorizontal = null)
 @id=@{args.toMap.get('id).map(_.toString).getOrElse(field.id)}
 @twbs.formhelper.html.fieldConstructor(
     views.html.helper.FieldElements(
@@ -9,7 +9,7 @@
         field,
         inputDef(id, field.name, field.value, args.filter(arg => !arg._1.name.startsWith("_") && arg._1 != 'id && arg._1 != 'class).toMap, field.hasErrors),
         args.toMap,
-        lang
+        messages
     ),
     formHorizontal
 )

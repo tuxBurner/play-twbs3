@@ -4,12 +4,12 @@ organization := "com.github.tuxBurner"
 
 version := "1.0.1-SNAPSHOT"
 
-scalaVersion := "2.11.1"
+scalaVersion := "2.11.6"
 
 crossScalaVersions := Seq("2.10.4")
 
 libraryDependencies ++= Seq(
-  "com.typesafe.play" %% "play" % "2.3.5"
+  "com.typesafe.play" %% "play" % "2.4.6"
 )
 
 lazy val root = (project in file(".")).enablePlugins(SbtTwirl)
