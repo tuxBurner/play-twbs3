@@ -2,7 +2,7 @@ name := """play-twbs3"""
 
 organization := "com.github.tuxBurner"
 
-version := "1.0.1-SNAPSHOT"
+version := "2.4.0"
 
 scalaVersion := "2.11.6"
 

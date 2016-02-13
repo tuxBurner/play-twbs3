@@ -4,7 +4,8 @@ This is a collection of template helpers for twitter bootstrap 3 (http://getboot
 
 
 ## Versions
-1.0: Release for play 2.3.
+* 2.4.0: Release for play 2.4
+* 1.0:  Release for play 2.3.
 
 
 0.4: Fixed bug with class is rendered out twice when using 'class->"test", added bsSelected for http://silviomoreto.github.io/bootstrap-select/ support.
@@ -24,7 +25,7 @@ resolvers += "tuxburner.github.io" at "http://tuxburner.github.io/repo"
 Add a dependency on the following artifact:
 
 ```scala
-libraryDependencies += "com.github.tuxBurner" %% "play-twbs3" % "1.0"
+libraryDependencies += "com.github.tuxBurner" %% "play-twbs3" % "2.4.0"
 ```
 
 ## Examples
